@@ -86,7 +86,7 @@ Loads a LoRA by filename.
 
 Search for
 
-> Logic Toolkit
+> Conditional Nodes by Mikudes
 
 and install.
 
