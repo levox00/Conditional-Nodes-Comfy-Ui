@@ -1,4 +1,5 @@
 # ComfyUI Logic Toolkit
+<img width="800" alt="Screenshot 2026-07-15 204501" src="https://github.com/user-attachments/assets/4c2fad82-0666-437f-affc-e77a4916345d" />
 
 A collection of utility nodes for building dynamic and configurable ComfyUI workflows.
 
@@ -10,36 +11,61 @@ A collection of utility nodes for building dynamic and configurable ComfyUI work
 - **If True 3**
 - **If True 4**
 
-Route data depending on a string comparison.
+These nodes compare the **Trigger** input with the **Expected** value.
+
+If both strings match, the node outputs the **If True** input(s). Otherwise it outputs the optional **Fallback** input(s), if connected.
+
+This makes it easy to switch between models, prompts, LoRAs or any other data based on a simple string value.
 
 Example:
 
 ```
 trigger == expected
         │
-      Yes ──► Output
-      No  ──► Fallback (optional)
+      Yes ──► If True Output(s)
+      No  ──► Fallback Output(s) (optional)
 ```
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/22715167-4bb0-4907-a197-05b6ff3f5803" />
 
 ---
 
 ### Merge Nodes
 
-**Merge First**
+#### Merge First
 
-Returns the first valid input from up to 16 inputs.
+Returns the first connected input that contains a valid value.
 
-Useful for combining multiple conditional branches.
+Useful when several conditional branches can produce an output and you only want to continue with the first available one.
+
+Example:
+
+```
+Branch A ─┐
+Branch B ─┼──► Merge First ─► Output
+Branch C ─┘
+```
 
 ---
 
 ### Constant Nodes
 
-- Const String
-- Const Int
-- Const Float
+#### Const String
 
-Useful for reusable workflows.
+Outputs a fixed string value.
+
+Useful for trigger values, model names or reusable workflow parameters.
+
+#### Const Int
+
+Outputs a fixed integer value.
+
+Useful for seeds, steps or any integer input.
+
+#### Const Float
+
+Outputs a fixed float value.
+
+Useful for CFG, strengths or other floating-point values.
 
 ---
 
@@ -49,9 +75,19 @@ Useful for reusable workflows.
 
 Loads a diffusion model using its filename.
 
+Example:
+
+```
+flux1-dev.safetensors
+```
+
+The string must exactly match the filename inside your `models/diffusion_models` folder.
+
+---
+
 #### Load Checkpoint From String
 
-Loads a checkpoint from a string.
+Loads a checkpoint using its filename.
 
 Outputs:
 
@@ -59,9 +95,29 @@ Outputs:
 - CLIP
 - VAE
 
+Example:
+
+```
+juggernautXL_v9.safetensors
+```
+
+The string must match a checkpoint inside your `models/checkpoints` folder.
+
+---
+
 #### Load LoRA From String
 
-Loads a LoRA by filename.
+Loads a LoRA by filename and applies it to a MODEL and CLIP.
+
+If the LoRA name is empty, the original MODEL and CLIP are returned unchanged.
+
+Example:
+
+```
+DetailTweaker.safetensors
+```
+
+The filename must exist inside your `models/loras` folder.
 
 ---
 
@@ -84,9 +140,9 @@ Loads a LoRA by filename.
 
 ### Using ComfyUI Manager
 
-Search for
+Search for:
 
-> Conditional Nodes by Mikudes
+> **Conditional Nodes by Mikudes**
 
 and install.
 
@@ -94,23 +150,31 @@ and install.
 
 ### Manual Installation
 
-Clone into your `custom_nodes` folder.
+Clone this repository into your `custom_nodes` folder.
 
-## Example paths:
-> ``C:\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI\custom_nodes``
-> 
-> ``C:\Users\user\AppData\Local\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI\custom_nodes``
+Example locations:
 
-Restart ComfyUI.
+```
+C:\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI\custom_nodes
+```
+
+or
+
+```
+C:\Users\<username>\AppData\Local\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI\custom_nodes
+```
+
+Restart ComfyUI after installation.
 
 ---
 
 ## Example Use Cases
 
 - Dynamic checkpoint selection
+- Dynamic diffusion model selection
 - Dynamic LoRA loading
-- Conditional workflow branches
 - Shared workflows with multiple configurations
+- Conditional workflow branches
 - Cleaner workflows using Merge First
 
 ---
