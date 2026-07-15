@@ -44,6 +44,7 @@ Branch A ─┐
 Branch B ─┼──► Merge First ─► Output
 Branch C ─┘
 ```
+<img width="500" alt="Screenshot 2026-07-15 205100" src="https://github.com/user-attachments/assets/c31ad215-d0a2-4bd8-9df5-5019d0a0e529" />
 
 ---
 
