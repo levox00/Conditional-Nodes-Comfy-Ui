@@ -94,13 +94,12 @@ and install.
 
 ### Manual Installation
 
-Clone into your `custom_nodes` folder:
+Clone into your `custom_nodes` folder.
 
-```bash
-cd ComfyUI/custom_nodes
-
-git clone https://github.com/YOUR_USERNAME/ComfyUI-Logic-Toolkit
-```
+## Example paths:
+> ``C:\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI\custom_nodes``
+> 
+> ``C:\Users\user\AppData\Local\Comfy-Desktop\ComfyUI-Installs\ComfyUI\ComfyUI\custom_nodes``
 
 Restart ComfyUI.
 
