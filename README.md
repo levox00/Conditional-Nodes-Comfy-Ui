@@ -1,4 +1,4 @@
-# ComfyUI Logic Toolkit
+# Conditional Nodes by Mikudes Comfy-Ui
 <img width="800" alt="Screenshot 2026-07-15 204501" src="https://github.com/user-attachments/assets/4c2fad82-0666-437f-affc-e77a4916345d" />
 
 A collection of utility nodes for building dynamic and configurable ComfyUI workflows.
