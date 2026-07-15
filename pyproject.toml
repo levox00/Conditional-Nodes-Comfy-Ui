@@ -1,0 +1,21 @@
+[project]
+name = "conditional-nodes-by-mikudes"
+version = "1.0.0"
+description = "Logic, conditional and dynamic loader nodes for ComfyUI."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "levox00" }
+]
+requires-python = ">=3.10"
+
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/levox00/Conditional-Nodes-Comfy-Ui"
+Issues = "https://github.com/levox00/Conditional-Nodes-Comfy-Ui/issues"
+
+[tool.comfy]
+PublisherId = "levox00"
+DisplayName = "Conditional Nodes by Mikudes"
+Icon = "https://cdn.discordapp.com/avatars/1217896131099365382/5911f304fa4480bd92f5230d62518ac6.png?size=1024"
